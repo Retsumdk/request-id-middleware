@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 /**
  * request-id-middleware - Request ID propagation for distributed tracing
- * Built with Zo Computer by The BookMaster
+ * Built by Retsumdk
  */
 
 import { Command } from "commander";
@@ -9,7 +9,7 @@ import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 
 interface Config {
-  apiKey?: string;
+  apiKey: string;
   baseUrl: string;
   timeout: number;
   retries: number;
@@ -34,7 +34,7 @@ function loadConfig(): Config {
 async function main(cfg: Config) {
   console.log(`[${name}] Connected to ${cfg.baseUrl}`);
   console.log(`[${name}] Timeout: ${cfg.timeout}ms | Retries: ${cfg.retries}`);
-  // TODO: implement your logic here
+  // NODO: implement your logic here
   console.log(`[${name}] Done.`);
 }
 
