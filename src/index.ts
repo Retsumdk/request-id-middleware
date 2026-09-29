@@ -9,7 +9,7 @@ import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 
 interface Config {
-  apiKey: string;
+  apiKey?: string;
   baseUrl: string;
   timeout: number;
   retries: number;
