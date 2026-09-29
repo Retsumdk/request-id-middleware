@@ -31,6 +31,8 @@ function loadConfig(): Config {
   return { ...DEFAULTS };
 }
 
+const name = "request-id-middleware";
+
 async function main(cfg: Config) {
   console.log(`[${name}] Connected to ${cfg.baseUrl}`);
   console.log(`[${name}] Timeout: ${cfg.timeout}ms | Retries: ${cfg.retries}`);
@@ -48,4 +50,6 @@ program.name("request-id-middleware").description("Request ID propagation for di
     try { await main(cfg); }
     catch (e) { console.error(`Error: ${e}`); process.exit(1); }
   });
-program.parse(process.argv);
+if (import.meta.main) {
+  program.parse(process.argv);
+}
